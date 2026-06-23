@@ -1,0 +1,21 @@
+# Project: Ashhcb Bot - AI Image Transformer on Bale
+# File Path: requirements.txt
+# Author: Amin Davodian
+# Full Name: Mohammadamin Davodian
+# Website: https://senioramin.com
+# GitHub: https://github.com/SeniorAminam
+# LinkedIn: https://linkedin.com/in/SudoAmin
+# Developer: @SeniorAminBot
+# Brand: SeniorAmin
+# Created Date: 2026-06-21
+# Modified Date: 2026-06-23
+# Version: 2.0.0
+# Purpose: Python package dependencies
+# License: MIT
+# Copyright: (c) Amin Davodian
+
+python-telegram-bot>=20.0,<22.0
+httpx>=0.27.0
+Pillow>=10.0.0
+python-dotenv>=1.0.0
+openai>=1.0.0

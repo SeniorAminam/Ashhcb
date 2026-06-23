@@ -1,0 +1,56 @@
+# Project: Ashhcb Bot - AI Image Transformer on Bale
+# File Path: .gitignore
+# Author: Amin Davodian
+# Full Name: Mohammadamin Davodian
+# Website: https://senioramin.com
+# GitHub: https://github.com/SeniorAminam
+# LinkedIn: https://linkedin.com/in/SudoAmin
+# Developer: @SeniorAminBot
+# Brand: SeniorAmin
+# Created Date: 2026-06-21
+# Modified Date: 2026-06-23
+# Version: 1.0.0
+# Purpose: Git ignore rules for project
+# License: MIT
+# Copyright: (c) Amin Davodian
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+*.so
+
+# Virtual Environment
+venv/
+venv_*
+.env
+
+# Database
+*.db
+data/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Temp
+tmp/
+temp/
+*_test_*.jpg
+*_result.jpg
+_hf_input.jpg
+
+# Project specific
+test_*.jpg

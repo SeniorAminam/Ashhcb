@@ -1,0 +1,52 @@
+# Project: Ashhcb Bot - Image to Trend Transform
+# File Path: docker-compose.yml
+# Author: Amin Davodian
+# Full Name: Mohammadamin Davodian
+# Website: https://senioramin.com
+# GitHub: https://github.com/SeniorAminam
+# LinkedIn: https://linkedin.com/in/SudoAmin
+# Developer: @SeniorAminBot
+# Brand: SeniorAmin
+# Created Date: 2026-06-21
+# Modified Date: 2026-06-23
+# Version: 3.0.0
+# Purpose: Docker Compose configuration for Ashhcb Bot
+# License: MIT
+# Copyright: (c) Amin Davodian
+#
+# Usage:
+#   docker compose up -d
+#   docker compose logs -f
+
+services:
+  ashhc-bot:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ashhc-bot
+    restart: unless-stopped
+    env_file:
+      - .env
+    volumes:
+      - ashhc_data:/app/data
+      - ashhc_logs:/app/logs
+    environment:
+      - TZ=Asia/Tehran
+    networks:
+      - ashhc_network
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+networks:
+  ashhc_network:
+    name: ashhc_network
+    driver: bridge
+
+volumes:
+  ashhc_data:
+    name: ashhc_data
+  ashhc_logs:
+    name: ashhc_logs

@@ -1,0 +1,59 @@
+# Project: Ashhcb Bot - AI Image Transformer on Bale
+# File Path: .dockerignore
+# Author: Amin Davodian
+# Full Name: Mohammadamin Davodian
+# Website: https://senioramin.com
+# GitHub: https://github.com/SeniorAminam
+# LinkedIn: https://linkedin.com/in/SudoAmin
+# Developer: @SeniorAminBot
+# Brand: SeniorAmin
+# Created Date: 2026-06-23
+# Modified Date: 2026-06-23
+# Version: 1.0.0
+# Purpose: Docker build ignore rules
+# License: MIT
+# Copyright: (c) Amin Davodian
+
+# Git
+.git
+.gitignore
+
+# Python cache
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Virtual environment
+venv/
+venv_*
+
+# Local env (production uses .env mounted at runtime)
+.env
+
+# Database and data
+*.db
+data/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Temp
+tmp/
+temp/
+test_*.jpg
+
+# Docs (not needed in runtime image)
+docs/
+README.md
+LICENSE
+RULES.md
+AGENTS.md
