@@ -1,147 +1,30 @@
-<!--
-Project:         Ashhcb Bot - AI Image Transformer on Bale
-File Path:       README.md
-Author:          Amin Davodian
-Full Name:       Mohammadamin Davodian
-Website:         https://senioramin.com
-GitHub:          https://github.com/SeniorAminam
-LinkedIn:        https://linkedin.com/in/SudoAmin
-Developer:       @SeniorAminBot
-Brand:           SeniorAmin
-Created Date:    2026-06-23
-Modified Date:   2026-06-23
-Version:         4.0.2
-Purpose:         Project README (Persian + English)
-License:         MIT
-Copyright:       (c) Amin Davodian
--->
+<div align="center">
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Python-3.11+-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python">
-  <img src="https://img.shields.io/badge/Bale%20API-Compatible-34A853?style=for-the-badge&logo=telegram&logoColor=white" alt="Bale API">
-  <img src="https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge" alt="MIT">
-  <img src="https://img.shields.io/badge/Status-Active-00C853?style=for-the-badge" alt="Status">
-  <img src="https://img.shields.io/badge/Free-No%20CC%20Required-FF6F00?style=for-the-badge" alt="Free">
-</p>
+# 🤖 Ashhcb Bot
+### AI Image Transformer on Bale Messenger
+**txt2img · img2img · Vision** — powered by Agnes AI (free tier)
 
-<h1 align="center">🤖 Ashhcb Bot</h1>
-<h3 align="center">AI Image Transformer on Bale Messenger</h3>
-<p align="center"><b>txt2img · img2img · Vision</b> — powered by Agnes AI</p>
-
-<br>
-
-<div dir="rtl" align="right">
-
----
-
-# 🇮🇷 فارسی
-
-## 🤖 ربات Ashhcb
-
-**ربات هوشمند و رایگان بله** برای ساخت عکس از متن، تبدیل عکس با پرامپت، و تحلیل تصاویر — با قدرت هوش مصنوعی **Agnes AI**.
-
-### ✨ قابلیت‌ها
-
-| | قابلیت | توضیح |
-|---|---|---|
-| 🖼️ | **ساخت عکس** (txt2img) | هر متنی بنویس → عکس 1024×1024 در ~۲۵ ثانیه |
-| 📷 | **شروع تبدیل عکس** (img2img) | عکس + متن بفرست → نسخه ویرایش شده دریافت کن |
-| 🔍 | **تحلیل تصویر** (Vision) | عکس بفرست → توضیح کامل فارسی دریافت کن |
-
-**کاملاً رایگان** — بدون نیاز به کارت بانکی، بدون محدودیت روزانه.
-
-### 🚀 شروع سریع
-
-```bash
-git clone https://github.com/SeniorAminam/Ashhcb.git
-cd Ashhcb
-python -m venv venv && source venv/bin/activate
-pip install -r requirements.txt
-cp .env.example .env
-# ویرایش .env — BOT_TOKEN و AGNES_API_KEY رو وارد کن
-python -m src.bot
-```
-
-یا با داکر:
-
-```bash
-docker compose up -d
-```
-
-### 🏗️ معماری
-
-```
-کاربر بله → Polling Bot → AIService → AgnesService → Agnes AI API → نتیجه
-                                        │
-                                   txt2img | img2img | vision
-                                        │
-                                   Catbox.moe (آپلود موقت عکس)
-```
-
-### 📁 ساختار پروژه
-
-```
-src/
-├── bot.py              # نقطه ورودی، ثبت هندلرها
-├── config/settings.py  # تنظیمات و متغیرهای محیطی
-├── handlers/           # start, photo, callback, admin, user_panel, error
-├── keyboards/          # reply (منو), inline (مدل‌ها)
-├── services/           # agnes_service, ai_service, storage (SQLite)
-└── utils/helpers.py    # resize, format, dimensions
-```
-
-### ⚙️ تنظیمات
-
-```ini
-BOT_TOKEN=123456789:abc...        # از @botfather در بله (ble.ir/botfather)
-AGNES_API_KEY=sk-...              # از apihub.agnes-ai.com (ثبت‌نام رایگان)
-ADMIN_USER_IDS=1040785496         # آیدی عددی ادمین‌ها
-RATE_LIMIT_SECONDS=60             # فاصله یک دقیقه‌ای بین درخواست‌ها
-```
-
-### 🔐 محدودیت‌ها
-
-- **یک دقیقه** فاصله بین درخواست‌ها (به ازای هر کاربر)
-- حداکثر حجم عکس: **۱۰ مگابایت**
-- رزولوشن: تا **1024×1024** (قابلیت 4K)
-- هاستینگ موقت عکس: **۷۲ ساعت** (catbox.moe)
-
-### 🐳 استقرار با داکر
-
-```bash
-docker compose build --no-cache
-docker compose up -d
-docker compose logs -f
-git pull && docker compose build --no-cache && docker compose up -d
-```
-
-### 📄 مجوز
-
-**MIT** — [LICENSE](LICENSE)
-
----
+[![Python](https://img.shields.io/badge/Python-3.11+-3776AB?style=flat-square&logo=python&logoColor=white)](https://python.org)
+[![Bale API](https://img.shields.io/badge/Bale%20API-Compatible-34A853?style=flat-square&logo=telegram&logoColor=white)](https://tapi.bale.ai)
+[![License](https://img.shields.io/badge/License-MIT-yellow?style=flat-square)](LICENSE)
+[![Status](https://img.shields.io/badge/Status-Active-00C853?style=flat-square)]()
+[![Free](https://img.shields.io/badge/Free-No%20CC%20Required-FF6F00?style=flat-square)]()
 
 </div>
 
 ---
 
-# 🇬🇧 English
+<br>
 
-## 🤖 Ashhcb Bot
+> **🇮🇷 Ashhcb Bot** یک ربات هوشمند و کاملاً رایگان برای پیام‌رسان **بله** است.  
+> با قدرت **Agnes AI** می‌توانید عکس بسازید، عکس را با پرامپت دلخواه تبدیل کنید، و تصاویر را تحلیل کنید.  
+> بدون نیاز به کارت بانکی، بدون محدودیت روزانه. فقط یک توکن ربات بله + کلید API رایگان Agnes AI.
 
-A **zero-cost** Bale messenger bot for AI-powered image generation, transformation, and analysis — powered by **Agnes AI** free tier.
+<br>
 
-### ✨ Capabilities
+---
 
-| | Feature | How it Works |
-|---|---|---|
-| 🖼️ | **txt2img** | Type any prompt → get a 1024×1024 image in ~25s |
-| 📷 | **img2img** | Send photo + prompt → get an AI-edited version |
-| 🔍 | **Vision** | Upload a photo → get a detailed Persian description |
-
-**100% free** — no credit card, no daily limits, no hidden costs.
-
-### 🚀 Quick Start
+## 🚀 Quick Start
 
 ```bash
 git clone https://github.com/SeniorAminam/Ashhcb.git
@@ -149,76 +32,118 @@ cd Ashhcb
 python -m venv venv && source venv/bin/activate
 pip install -r requirements.txt
 cp .env.example .env
-# edit .env with your BOT_TOKEN + AGNES_API_KEY
+# edit .env → BOT_TOKEN + AGNES_API_KEY
 python -m src.bot
 ```
 
-Or with Docker:
+Or with **Docker**:
 
 ```bash
 docker compose up -d
 ```
 
-### 🏗️ Architecture
+---
+
+## ✨ Features
+
+| | 🇮🇷 فارسی | 🇬🇧 English |
+|---|---|---|
+| 🖼️ | **ساخت عکس** — هر متنی بنویس، عکس 1024×1024 دریافت کن | **txt2img** — type any prompt, get a 1024×1024 image |
+| 📷 | **تبدیل عکس** — عکس + متن بفرست، نسخه ویرایش شده بگیر | **img2img** — send photo + prompt, get AI-edited result |
+| 🔍 | **تحلیل تصویر** — عکس بفرست، توضیح کامل فارسی بگیر | **Vision** — upload photo, get detailed Persian analysis |
+
+**All capabilities are free. Zero daily limit. Zero credit card required.**
+
+---
+
+## 🔧 Configuration
+
+```ini
+BOT_TOKEN=123456789:abc...        # From @botfather (ble.ir/botfather)
+AGNES_API_KEY=sk-...              # From apihub.agnes-ai.com (free)
+ADMIN_USER_IDS=1040785496         # Comma-separated admin IDs
+RATE_LIMIT_SECONDS=60             # 60s cooldown between requests
+```
+
+---
+
+## 🏗️ Architecture
 
 ```
-Bale User → Polling Bot → AIService → AgnesService → Agnes AI API → Result
-                                       │
-                                  txt2img | img2img | vision
-                                       │
-                                  Catbox.moe (temp image upload)
+┌──────────┐     ┌──────────────┐     ┌──────────────────┐
+│   Bale   │────▶│  AIService   │────▶│  Agnes AI API    │
+│   User   │◀────│  (Wrapper)   │◀────│  (Free Tier)     │
+└──────────┘     └──────┬───────┘     └──────────────────┘
+                        │
+                 ┌──────┴───────┐
+                 │ AgnesService │
+                 │  ├─ txt2img  │
+                 │  ├─ img2img  │
+                 │  └─ vision   │
+                 │  └─ catbox   │
+                 │     uploader  │
+                 └──────────────┘
 ```
 
-### 📁 Project Structure
+**Key decisions:**
+- Single provider (Agnes AI) — no fallback chain, minimal complexity
+- img2img uses `/images/generations` + `image_url` (NOT `/images/edits` — upstream bug)
+- Catbox.moe for temp image hosting (free, 72h, no auth)
+- 60s rate limit per user (fair usage of free tier)
+
+---
+
+## 📁 Project Structure
 
 ```
 src/
 ├── bot.py              # Entry point, handler registration
-├── config/settings.py  # Environment variables, constants
+├── config/settings.py  # Env vars & constants
 ├── handlers/           # start, photo, callback, admin, user_panel, error
-├── keyboards/          # reply (menu), inline (model selection)
+├── keyboards/          # reply (menu), inline (model select)
 ├── services/           # agnes_service, ai_service, storage (SQLite)
 └── utils/helpers.py    # resize, format, dimensions
 ```
 
-### ⚙️ Configuration
+---
 
-```ini
-BOT_TOKEN=123456789:abc...        # From @botfather on Bale (ble.ir/botfather)
-AGNES_API_KEY=sk-...              # From apihub.agnes-ai.com (free signup)
-ADMIN_USER_IDS=1040785496         # Comma-separated admin user IDs
-RATE_LIMIT_SECONDS=60             # Cooldown between API calls per user
-```
-
-### 🔐 Rate Limits
+## 📊 Rate Limits
 
 | Limit | Value |
 |-------|-------|
 | Per-user cooldown | 60 seconds |
 | Agnes API global | ~20 req/min |
 | Max image size | 10 MB |
-| Image resolution | Up to 1024×1024 (4K capable) |
-| Temp hosting | 72 hours (catbox.moe) |
+| Max resolution | 1024×1024 (4K capable) |
+| Temp image hosting | 72 hours (catbox.moe) |
 
-### 🐳 Docker Deployment
+---
+
+## 🐳 Docker Deployment
 
 ```bash
 docker compose build --no-cache
 docker compose up -d
 docker compose logs -f
+```
+
+**Update:**
+```bash
 git pull && docker compose build --no-cache && docker compose up -d
 ```
 
-### 📄 License
+---
 
-**MIT** — see [LICENSE](LICENSE).
+## 📄 License
+
+**MIT** — see [LICENSE](LICENSE)  
+Free to use, modify, and distribute.
 
 ---
 
-<p align="center">
-  <b>Developed with ❤️ by <a href="https://senioramin.com">Amin Davodian</a></b><br>
-  <a href="https://ble.ir/SeniorAminBot">📱 @SeniorAminBot on Bale</a> ·
-  <a href="https://github.com/SeniorAminam">🐙 GitHub</a> ·
-  <a href="https://linkedin.com/in/SudoAmin">💼 LinkedIn</a>
-</p>
+<div align="center">
 
+**Developed by [Amin Davodian](https://senioramin.com)**  
+[📱 @SeniorAminBot](https://ble.ir/SeniorAminBot) · [🐙 GitHub](https://github.com/SeniorAminam) · [💼 LinkedIn](https://linkedin.com/in/SudoAmin)
+
+</div>
