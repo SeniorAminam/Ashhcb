@@ -20,12 +20,11 @@ import time
 from telegram import Update
 from telegram.ext import ContextTypes
 
-from src.config.settings import BOT_VERSION, BOT_USERNAME, SUPPORT_LINK, RATE_LIMIT_SECONDS
-from src.keyboards.inline import get_start_keyboard, get_model_selection_keyboard
+from src.config.settings import BOT_VERSION, SUPPORT_LINK, RATE_LIMIT_SECONDS
 from src.keyboards.reply import get_main_keyboard, get_user_panel_keyboard
 from src.services.storage import UserStorage
 from src.services.ai_service import AIService, AIServiceError
-from src.handlers.admin import is_admin, admin_panel_handler
+from src.handlers.admin import is_admin
 from src.handlers.user_panel import user_panel_handler
 from src.utils.helpers import format_size as _format_size
 

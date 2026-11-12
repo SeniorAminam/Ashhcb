@@ -9,9 +9,9 @@
   <img alt="Free" src="https://img.shields.io/badge/Free-No%20CC%20Required-FF6F00?style=for-the-badge">
 </p>
 
-<h1 align="center">🤖 Ashhcb Bot</h1>
-<h3 align="center">AI Image Transformer for Bale Messenger</h3>
-<p align="center"><b>txt2img</b> · <b>img2img</b> · <b>Vision</b><br><sub>Powered by Agnes AI — Free Tier, Unlimited Daily</sub></p>
+<h1 align="center">🤖 Ashhcb Bot — MSU AI Assistant</h1>
+<h3 align="center">Mazandaran National Skills University AI Assistant for Bale Messenger</h3>
+<p align="center"><b>RAG Chat</b> · <b>Academic Advising</b> · <b>Career Guidance</b> · <b>Skill Discovery</b> · <b>Web Search</b> · <b>Scraping</b><br><sub>Powered by Gemma 4 (OpenAI-compatible) · Text-First Architecture · Multilingual (fa/en/ar)</sub></p>
 
 <hr>
 
@@ -20,17 +20,23 @@
 # 🇮🇷 فارسی
 
 <p>
-ربات <b>Ashhcb</b> یک دستیار هوشمند و کاملاً <b>رایگان</b> برای پیام‌رسان بله است.
-با استفاده از قدرت <b>Agnes AI</b>، می‌توانید:
+ربات <b>Ashhcb</b> دستیار هوشمند <b>دانشگاه ملی مهارت مازندران (MSU)</b> برای پیام‌رسان بله است.
+این ربات به عنوان یک دستیار متنی (Text-First) با قابلیت‌های زیر طراحی شده است:
 </p>
 
 <ul dir="auto">
-  <li><b>🖼️ عکس بسازید</b> — کافیست یک متن بنویسید، هوش مصنوعی تصویر 1024×1024 برایتان می‌سازد</li>
-  <li><b>📷 عکس را تبدیل کنید</b> — یک عکس + پرامپت دلخواه بفرستید، نسخه ویرایش‌شده دریافت کنید</li>
-  <li><b>🔍 تصاویر را تحلیل کنید</b> — هر عکسی بفرستید، توضیح کامل و دقیق به فارسی بگیرید</li>
+  <li><b>💬 چت آزاد (RAG)</b> — سوالات خود را به زبان طبیعی بپرسید، پاسخ بر اساس پایگاه دانش دانشگاه</li>
+  <li><b>🎓 مشاوره تحصیلی</b> — برنامه‌ریزی تحصیلی، پیشنهاد دوره‌ها، مسیر پیشرفت بر اساس پروفایل شما</li>
+  <li><b>💼 مشاوره شغلی</b> — مسیرهای شغلی، مهارت‌های مورد نیاز بازار کار، نقشه‌راه یادگیری</li>
+  <li><b>🎯 کشف مهارت‌ها</b> — جستجوی دوره‌ها و وورشاپ‌ها با فیلتر دسته‌بندی و سطح</li>
+  <li><b>📝 اطلاعات پذیرش</b> — شرایط ثبت‌نام، مدارک، مهلت‌ها، هزینه‌ها و مراحل پذیرش</li>
+  <li><b>📢 خلاصه اطلاعیه‌ها</b> — آخرین اخبار و اعلان‌های دانشگاه (از پایگاه دانش و اسکرپینگ)</li>
+  <li><b>🔍 جستجوی ترکیبی</b> — جستجو در پایگاه دانش محلی + وب (داکداک‌گو، سایت دانشگاه، کانال‌های ایتا)</li>
+  <li><b>🌐 چندزبانه</b> — فارسی (RTL)، انگلیسی، عربی با فرمت‌دهی عدد و راست‌چین</li>
+  <li><b>⚙️ پنل ادمین</b> — مدیریت دانش، کنترل اسکریپرها، آمار کاربران، پیام همگانی</li>
 </ul>
 
-<p dir="auto">✅ بدون نیاز به کارت بانکی · ✅ بدون محدودیت روزانه · ✅ مبتنی بر هوش مصنوعی قدرتمند</p>
+<p dir="auto">✅ متنی (بدون تولید عکس) · ✅ چندزبانه (fa/en/ar) · ✅ RAG + وب‌اسکرپینگ · ✅ متن‌باز (MIT)</p>
 
 <details>
 <summary><b>📋 راهنمای سریع</b></summary>
@@ -52,7 +58,10 @@ pip install -r requirements.txt
 cp .env.example .env
 # فایل .env را ویرایش کنید:
 #   BOT_TOKEN=توکن_ربات_بله
-#   AGNES_API_KEY=کلید_API_Agnes
+#   AI_API_KEY=کلید_API_هوش_مصنوعی
+#   AI_BASE_URL=آدرس_API
+#   AI_MODEL_CHAT=نام_مدل_چت
+#   ADMIN_USER_IDS=شناسه_کاربری_ادمین
 ```
 
 **۳. اجرا:**
@@ -73,20 +82,25 @@ docker compose up -d
 
 # 🇬🇧 English
 
-**Ashhcb Bot** is a free, open-source AI assistant for Bale messenger.  
-It leverages **Agnes AI** (free tier, no credit card required) to provide three core capabilities:
+**Ashhcb Bot** is the official AI assistant for **Mazandaran National Skills University (MSU)** on Bale messenger.  
+It is a **text-first** assistant powered by **Gemma 4** (via OpenAI-compatible API) with the following capabilities:
 
 <div align="center">
 
 | Icon | Capability | 🇮🇷 | 🇬🇧 |
 |:---:|---|---|---|
-| 🖼️ | **txt2img** | هر متنی بنویس → عکس بگیر | Type a prompt → get a 1024×1024 image |
-| 📷 | **img2img** | عکس + متن بفرست → ویرایش کن | Send photo + prompt → get an AI edit |
-| 🔍 | **Vision** | عکس بفرست → توضیح بگیر | Upload photo → get Persian analysis |
+| 💬 | **RAG Chat** | چت آزاد با پایگاه دانش | Free-form chat with KB context |
+| 🎓 | **Academic Advising** | مشاوره تحصیلی و برنامه‌ریزی | Personalized study planning |
+| 💼 | **Career Guidance** | مشاوره شغلی و بازار کار | Career paths & skill roadmaps |
+| 🎯 | **Skill Discovery** | جستجوی مهارت‌ها و دوره‌ها | Course/workshop search |
+| 📝 | **Admissions Info** | اطلاعات پذیرش و ثبت‌نام | Registration requirements |
+| 📢 | **Announcements** | خلاصه اطلاعیه‌ها | University news summary |
+| 🔍 | **Hybrid Search** | جستجوی محلی + وب | Local KB + web search |
+| 🌐 | **Multilingual** | فارسی/انگلیسی/عربی (RTL) | fa/en/ar with RTL support |
 
 </div>
 
-All operations are **completely free** — no daily cap, no hidden costs, no credit card required.
+All operations are **text-based** (no image generation), **multilingual**, and **open-source** (MIT).
 
 ---
 
@@ -94,9 +108,9 @@ All operations are **completely free** — no daily cap, no hidden costs, no cre
 
 ### Prerequisites
 
-- Python 3.10+
+- Python 3.11+
 - A Bale bot token from [@botfather](https://ble.ir/botfather)
-- A free Agnes AI API key from [apihub.agnes-ai.com](https://apihub.agnes-ai.com)
+- An OpenAI-compatible AI API endpoint (e.g., Gemma 4) with API key
 
 ### Installation
 
@@ -117,7 +131,9 @@ pip install -r requirements.txt
 cp .env.example .env
 # Edit .env with your tokens:
 #   BOT_TOKEN=your_bot_token
-#   AGNES_API_KEY=sk-your-agnes-key
+#   AI_API_KEY=sk-your-ai-key
+#   AI_BASE_URL=https://your-endpoint/v1
+#   AI_MODEL_CHAT=Iag4a/Gemma-4-26B-A4B-it
 #   ADMIN_USER_IDS=your_user_id
 
 # Run the bot
@@ -153,9 +169,24 @@ docker compose build --no-cache && docker compose up -d
   <td>✅</td>
 </tr>
 <tr>
-  <td><code>AGNES_API_KEY</code></td>
-  <td>Free API key from Agnes AI console</td>
+  <td><code>AI_API_KEY</code></td>
+  <td>API key for OpenAI-compatible endpoint</td>
   <td>✅</td>
+</tr>
+<tr>
+  <td><code>AI_BASE_URL</code></td>
+  <td>Base URL of AI API (e.g., http://193.93.169.247:20128/v1)</td>
+  <td>✅</td>
+</tr>
+<tr>
+  <td><code>AI_MODEL_CHAT</code></td>
+  <td>Chat model name (e.g., Iag4a/Gemma-4-26B-A4B-it)</td>
+  <td>✅</td>
+</tr>
+<tr>
+  <td><code>AI_MODEL_VISION</code></td>
+  <td>Vision model name (for future image analysis)</td>
+  <td>Optional</td>
 </tr>
 <tr>
   <td><code>ADMIN_USER_IDS</code></td>
@@ -172,52 +203,91 @@ docker compose build --no-cache && docker compose up -d
   <td>Maximum upload size in MB (default: 10)</td>
   <td>Optional</td>
 </tr>
+<tr>
+  <td><code>DOWNLOAD_TIMEOUT</code></td>
+  <td>Download timeout in seconds (default: 60)</td>
+  <td>Optional</td>
+</tr>
+<tr>
+  <td><code>API_TIMEOUT</code></td>
+  <td>AI API request timeout (default: 120)</td>
+  <td>Optional</td>
+</tr>
+<tr>
+  <td><code>ENABLE_WEB_SEARCH</code></td>
+  <td>Enable DuckDuckGo web search (default: true)</td>
+  <td>Optional</td>
+</tr>
+<tr>
+  <td><code>ENABLE_SCRAPERS</code></td>
+  <td>Enable scheduled web scraping (default: true)</td>
+  <td>Optional</td>
+</tr>
+<tr>
+  <td><code>DEFAULT_LANGUAGE</code></td>
+  <td>Default language: fa, en, ar (default: fa)</td>
+  <td>Optional</td>
+</tr>
+<tr>
+  <td><code>LOG_LEVEL</code></td>
+  <td>Logging level: DEBUG, INFO, WARNING, ERROR (default: INFO)</td>
+  <td>Optional</td>
+</tr>
+<tr>
+  <td><code>LOG_DIR</code></td>
+  <td>Log directory (default: logs)</td>
+  <td>Optional</td>
+</tr>
+<tr>
+  <td><code>LOG_JSON</code></td>
+  <td>JSON format for log files (default: false)</td>
+  <td>Optional</td>
+</tr>
 </table>
 
 ---
 
 ## 🏗️ Architecture
 
-The system follows a clean layered architecture:
+The system follows a clean layered architecture with modular services:
 
 ```
 ┌─────────────────────────────────────────────────────────┐
 │                      Bale User                          │
 └────────────────────┬────────────────────────────────────┘
-                     │  Message / Photo
+                     │  Message / Callback
                      ▼
 ┌─────────────────────────────────────────────────────────┐
-│              Polling Bot (python-telegram-bot)           │
-│  ┌─────────┐  ┌──────────┐  ┌────────┐  ┌───────────┐  │
-│  │ start   │  │ photo    │  │admin   │  │ callback  │  │
-│  │ handler │  │ handler  │  │handler │  │ handler   │  │
-│  └────┬────┘  └────┬─────┘  └───┬────┘  └─────┬─────┘  │
-│       │            │            │              │        │
-│       └────────────┴────────────┴──────────────┘        │
+│              Polling Bot (python-telegram-bot 21.x)      │
+│  ┌─────────┐ ┌────────┐ ┌─────────┐ ┌──────────┐        │
+│  │ menu    │ │ chat   │ │ search  │ │ advisory │        │
+│  │ handler │ │ handler│ │ handler │ │ handlers │        │
+│  └────┬────┘ └────┬───┘ └────┬────┘ └────┬─────┘        │
+└───────┼────────────┼──────────┼──────────┼───────────────┘
+        │            │          │          │
+        ▼            ▼          ▼          ▼
+┌─────────────────────────────────────────────────────────┐
+│                    Service Layer                         │
+│  ┌──────────────┐ ┌──────────────┐ ┌────────────────┐  │
+│  │ AIService    │ │ KnowledgeSvc │ │ SearchService  │  │
+│  │ (RAG, LLM)   │ │ (ingest,     │ │ (local + web)  │  │
+│  │              │ │  search)     │ │                │  │
+│  └──────────────┘ └──────────────┘ └────────────────┘  │
+│  ┌──────────────┐ ┌──────────────┐ ┌────────────────┐  │
+│  │ ScraperSvc   │ │ I18nService  │ │ Storage        │  │
+│  │ (web, eitaa) │ │ (fa/en/ar,   │ │ (SQLite WAL)   │  │
+│  │              │ │  RTL, nums)  │ │                │  │
+│  └──────────────┘ └──────────────┘ └────────────────┘  │
 └─────────────────────────┬───────────────────────────────┘
                           │
                           ▼
 ┌─────────────────────────────────────────────────────────┐
-│                   AIService (Orchestrator)                │
-│  ┌──────────────────────────────────────────────────┐   │
-│  │              AgnesService                         │   │
-│  │  ┌────────────┐  ┌────────────┐  ┌────────────┐  │   │
-│  │  │  txt2img   │  │  img2img   │  │  Vision    │  │   │
-│  │  │  generate  │  │  transform │  │  analyze   │  │   │
-│  │  └─────┬──────┘  └─────┬──────┘  └─────┬──────┘  │   │
-│  │        │               │               │         │   │
-│  │        └───────────────┼───────────────┘         │   │
-│  │                   ┌────┴────┐                    │   │
-│  │                   │ Catbox  │                    │   │
-│  │                   │ Upload  │                    │   │
-│  │                   └─────────┘                    │   │
-│  └──────────────────────────────────────────────────┘   │
-└─────────────────────────┬───────────────────────────────┘
-                          │
-                          ▼
-┌─────────────────────────────────────────────────────────┐
-│              Agnes AI API (apihub.agnes-ai.com)          │
-│         /v1/images/generations  ·  /v1/chat/completions │
+│              External Services                           │
+│  ┌──────────────────┐  ┌──────────────┐  ┌───────────┐  │
+│  │ AI API (Gemma 4) │  │ University   │  │ Eitaa /   │  │
+│  │ /v1/chat/        │  │ Website /    │  │ RSS Feeds │  │
+│  │ completions      │  │ DuckDuckGo   │  │           │  │
+│  └──────────────────┘  └──────────────┘  └───────────┘  │
 └─────────────────────────────────────────────────────────┘
 ```
 
@@ -229,20 +299,36 @@ The system follows a clean layered architecture:
   <th>Rationale</th>
 </tr>
 <tr>
-  <td><b>Single provider</b> (Agnes AI only)</td>
-  <td>No fallback complexity; Agnes supports all three capabilities with generous free tier</td>
+  <td><b>Text-first (no image gen)</b></td>
+  <td>Focus on RAG, advising, search; vision kept for future file/image reading</td>
 </tr>
 <tr>
-  <td><b>img2img via <code>/images/generations</code></b></td>
-  <td>Upstream <code>/images/edits</code> has a UTF-8 decode bug on binary data — using <code>image_url</code> parameter instead</td>
+  <td><b>OpenAI-compatible API</b></td>
+  <td>Vendor-agnostic; swap Gemma 4 for any compatible model</td>
 </tr>
 <tr>
-  <td><b>Catbox.moe for temp hosting</b></td>
-  <td>Free, no authentication, 72-hour expiry — used for both img2img and vision image URLs</td>
+  <td><b>RAG with keyword search</b></td>
+  <td>Simple, fast, no embedding dependency; upgradable to FTS5/vector</td>
 </tr>
 <tr>
-  <td><b>60s rate limit per user</b></td>
-  <td>Ensures fair usage of the free API tier (20 req/min global limit)</td>
+  <td><b>Async httpx + connection pooling</b></td>
+  <td>No blocking calls; 120s timeout freeze fixed</td>
+</tr>
+<tr>
+  <td><b>Multilingual (fa/en/ar) + RTL</b></td>
+  <td>Native Persian/Arabic support with numeral conversion</td>
+</tr>
+<tr>
+  <td><b>Hybrid search (local + web)</b></td>
+  <td>Covers KB gaps via DuckDuckGo + university site scraping</td>
+</tr>
+<tr>
+  <td><b>APScheduler for scrapers</b></td>
+  <td>Cron-like jobs for announcements, Eitaa channels</td>
+</tr>
+<tr>
+  <td><b>Rotating file logs</b></td>
+  <td>Separate bot/error/debug/ai/scraper logs with 10MB rotation</td>
 </tr>
 </table>
 
@@ -256,26 +342,36 @@ Ashhcb/
 ├── src/                          # Application source code
 │   ├── bot.py                    # Entry point, handler registration
 │   ├── config/
-│   │   └── settings.py           # Environment variables, constants
+│   │   ├── settings.py           # Environment variables, constants
+│   │   └── logging_config.py     # File-based rotating log setup
 │   ├── handlers/
-│   │   ├── start.py              # /start, text routing, AI generation
-│   │   ├── photo.py              # Photo receive + analysis routing
-│   │   ├── callback.py           # Inline button callbacks
-│   │   ├── admin.py              # Admin panel, stats, broadcast
-│   │   ├── user_panel.py         # User history, statistics
+│   │   ├── menu.py               # Main menu, settings, user/admin panels
+│   │   ├── chat.py               # Free-form RAG chat with history
+│   │   ├── search.py             # General/skills/announcements search
+│   │   ├── advisory.py           # Academic advising, career guidance (multi-step)
+│   │   ├── admin.py              # Admin: stats, users, knowledge, scrapers, broadcast
 │   │   └── error.py              # Global exception handler
 │   ├── keyboards/
-│   │   ├── reply.py              # Reply keyboards (main menu, panels)
-│   │   └── inline.py             # Inline keyboards (model select)
+│   │   └── builders.py           # Dynamic i18n keyboard builders
 │   ├── services/
-│   │   ├── agnes_service.py      # Agnes AI API wrapper (core)
-│   │   ├── ai_service.py         # Thin orchestrator layer
-│   │   └── storage.py            # SQLite database operations
+│   │   ├── agnes_service.py      # AI client (OpenAI-compat, Gemma 4)
+│   │   ├── ai_service.py         # RAG orchestrator (chat, advising, career, skills)
+│   │   ├── knowledge_service.py  # RAG pipeline: ingest, chunk, search, context
+│   │   ├── search_service.py     # Hybrid search: local KB + web
+│   │   ├── web_scraper_service.py# Async scraping: university, Eitaa, RSS, DDG
+│   │   ├── i18n_service.py       # i18n: translations, RTL, numerals, detection
+│   │   └── storage.py            # SQLite WAL: users, knowledge_chunks, scrape_jobs
+│   ├── locales/
+│   │   ├── fa.json               # Persian translations (200+ keys)
+│   │   ├── en.json               # English translations
+│   │   └── ar.json               # Arabic translations
 │   └── utils/
-│       └── helpers.py            # Image resize, format, dimensions
+│       └── helpers.py            # MarkdownV2 escape, formatting helpers
 │
-├── tests/
-│   └── test_agnes.py             # Agnes API integration tests
+├── scripts/
+│   └── seed_data.py              # Populate KB with MSU data (fa/en/ar)
+│
+├── tests/                        # Test suite (to be expanded)
 │
 ├── Dockerfile                    # Multi-stage Docker build
 ├── docker-compose.yml            # Docker Compose configuration
@@ -288,15 +384,52 @@ Ashhcb/
 
 ---
 
-## 📊 Rate Limits
+## 📊 Core Features Detail
 
-| Category | Limit |
-|----------|-------|
-| ⏱️ Per-user cooldown | **60 seconds** between requests |
-| 🌐 Agnes AI global | ~20 requests per minute |
-| 📤 Max upload size | **10 MB** per photo |
-| 🖼️ Max resolution | 1024×1024 (supports up to 4K) |
-| ⏳ Temp image hosting | **72 hours** on catbox.moe |
+### RAG Chat (`handlers/chat.py` + `services/ai_service.py`)
+- Conversation history (last 6 messages)
+- Context from knowledge base (top 3 chunks, 2500 chars)
+- Modes: general, admissions, career, skills
+- Source citations in responses
+
+### Academic Advising (`handlers/advisory.py`)
+- 5-step conversation: interests → skills → education → goals → fields
+- Personalized program recommendations
+- Course prerequisites, duration, certificates
+
+### Career Guidance (`handlers/advisory.py`)
+- 6-step conversation: interests → skills → experience → education → industries → location
+- Market-aware skill roadmaps
+- Learning path suggestions
+
+### Skill Discovery (`handlers/search.py`)
+- Category filter: admission, courses, announcements, skills, regulations, career
+- Level filter: beginner, intermediate, advanced
+- Paginated results with inline keyboards
+
+### Hybrid Search (`services/search_service.py`)
+- Local KB search (keyword-based, multi-language)
+- Web search via DuckDuckGo HTML scraping
+- Combined ranking with source priority
+
+### Web Scraping (`services/web_scraper_service.py`)
+- University website (announcements, admissions, courses)
+- Eitaa channel messages (public)
+- RSS/Atom feeds
+- APScheduler cron jobs (configurable intervals)
+- Selectolax (lexbor) for fast HTML parsing
+
+### Multilingual (`services/i18n_service.py`)
+- JSON translation files (200+ keys each)
+- Language detection from text
+- RTL formatting for fa/ar
+- Numeral conversion: Western → Persian/Arabic-Indic
+
+### Logging (`config/logging_config.py`)
+- Rotating files: `bot_YYYYMMDD.log`, `error_YYYYMMDD.log`, `debug_YYYYMMDD.log`
+- Specialized: `ai_calls_YYYYMMDD.log`, `scraper_YYYYMMDD.log`
+- 10MB max, 5 backups, UTF-8
+- Colored console output
 
 ---
 
@@ -314,6 +447,9 @@ mypy src/
 
 # Run tests
 python -m pytest tests/ -v
+
+# Seed knowledge base (after .env configured)
+python scripts/seed_data.py
 ```
 
 ---

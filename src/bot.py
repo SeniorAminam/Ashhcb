@@ -1,4 +1,4 @@
-# Project: Ashhcb Bot - Image to Trend Transform
+# Project: Ashhcb Bot - Mazandaran Skills University AI Assistant
 # File Path: src/bot.py
 # Author: Amin Davodian
 # Full Name: Mohammadamin Davodian
@@ -8,15 +8,16 @@
 # Developer: @SeniorAminBot
 # Brand: SeniorAmin
 # Created Date: 2026-06-21
-# Modified Date: 2026-06-23
-# Version: 4.0.2
-# Purpose: Main entry point for Ashhcb Bot - Bale bot for image transformation
+# Modified Date: 2026-11-12
+# Version: 5.0.0
+# Purpose: Main entry point for MSU AI Assistant Bot
 # License: MIT
 # Copyright: (c) Amin Davodian
 
 """
-Ashhcb Bot - Image to Trend Transform
-🤖 A Bale bot that transforms photos into trendy artistic styles using AI.
+MSU AI Assistant - Mazandaran Skills University AI Assistant Bot
+🤖 A Bale bot for university assistance: FAQ, academic advising, career guidance,
+    skill discovery, web scraping, and AI image generation.
 
 Usage:
     python -m src.bot
@@ -38,27 +39,41 @@ from telegram.ext import (
 )
 
 from src.config.settings import BOT_TOKEN, BALE_API_BASE, BALE_FILE_BASE
-from src.handlers.start import (
-    start_command,
-    help_command,
-    about_command,
-    models_command,
-    text_message_handler,
-)
-from src.handlers.photo import photo_handler
-from src.handlers.callback import callback_handler
-from src.handlers.error import error_handler
+from src.handlers.menu import get_menu_handlers
+from src.handlers.chat import get_chat_handlers
+from src.handlers.search import get_all_search_handlers
+from src.handlers.advisory import get_advisory_handlers
 from src.handlers.admin import (
-    admin_panel_handler,
-    _start_broadcast,
+    _start_broadcast_callback as _start_broadcast,
     receive_broadcast_text,
     cancel_broadcast,
     BROADCAST_TEXT,
+    get_admin_handlers,
 )
+from src.handlers.error import error_handler
 from src.services.storage import init_db
 from src.services.ai_service import AIService
+from src.services.agnes_service import AIService as AgnesClient
+from src.services.i18n_service import I18nService
 
 logger = logging.getLogger(__name__)
+
+
+async def post_init(application) -> None:
+    """Initialize shared resources after application starts."""
+    # Initialize AI Service AsyncClient
+    await AgnesClient.get_client()
+    logger.info("AI Service AsyncClient initialized")
+
+    # Load translations
+    I18nService.load_translations()
+    logger.info("Translations loaded")
+
+
+async def post_shutdown(application) -> None:
+    """Clean up shared resources on shutdown."""
+    await AgnesClient.close_client()
+    logger.info("AI Service AsyncClient closed")
 
 
 def validate_config() -> bool:
@@ -94,7 +109,7 @@ def main() -> None:
     asyncio.run() to avoid 'no current event loop' error on Python 3.12+
     when run_polling() is subsequently called.
     """
-    print("🤖 Ashhcb Bot در حال راه‌اندازی...")
+    print("🤖 MSU AI Assistant در حال راه‌اندازی...")
     print(f"🌐 API Base: {BALE_API_BASE}")
 
     if not validate_config():
@@ -112,9 +127,9 @@ def main() -> None:
         ai_ok, ai_msg = loop.run_until_complete(AIService.health_check())
         print(ai_msg)
         if not ai_ok:
-            print("   ⚠️ سرویس هوش مصنوعی در دسترس نیست. پردازش عکس کار نمی‌کند.")
+            print("   ⚠️ سرویس هوش مصنوعی در دسترس نیست. چت کار نمی‌کند.")
         else:
-            print("   ✅ سرویس Agnes AI در دسترس است")
+            print("   ✅ سرویس Gemma 4 در دسترس است")
 
         # Build the application with Bale custom base URL
         application = (
@@ -126,17 +141,32 @@ def main() -> None:
             .write_timeout(30)
             .connect_timeout(15)
             .pool_timeout(15)
+            .post_init(post_init)
+            .post_shutdown(post_shutdown)
             .build()
         )
 
         # ---------- Register Handlers ----------
 
-        # Command handlers
-        application.add_handler(CommandHandler("start", start_command))
-        application.add_handler(CommandHandler("help", help_command))
-        application.add_handler(CommandHandler("about", about_command))
-        application.add_handler(CommandHandler("models", models_command))
-        application.add_handler(CommandHandler("cancel", cancel_broadcast))
+        # Menu handlers (main menu, settings, user panel, admin panel)
+        for handler in get_menu_handlers():
+            application.add_handler(handler)
+
+        # Chat handlers (free-form RAG chat)
+        for handler in get_chat_handlers():
+            application.add_handler(handler)
+
+        # Search handlers (general search, skills search, announcements)
+        for handler in get_all_search_handlers():
+            application.add_handler(handler)
+
+        # Advisory handlers (academic advising, career guidance)
+        for handler in get_advisory_handlers():
+            application.add_handler(handler)
+
+        # Admin handlers
+        for handler in get_admin_handlers():
+            application.add_handler(handler)
 
         # Broadcast conversation handler (admin only)
         broadcast_conv = ConversationHandler(
@@ -156,23 +186,9 @@ def main() -> None:
             },
             fallbacks=[
                 CommandHandler("cancel", cancel_broadcast),
-                MessageHandler(filters.TEXT, text_message_handler),
             ],
         )
         application.add_handler(broadcast_conv)
-
-        # Photo handler
-        application.add_handler(
-            MessageHandler(filters.PHOTO, photo_handler)
-        )
-
-        # Text message handler (for ReplyKeyboard navigation)
-        application.add_handler(
-            MessageHandler(filters.TEXT & ~filters.COMMAND, text_message_handler)
-        )
-
-        # Callback query handler (inline buttons)
-        application.add_handler(CallbackQueryHandler(callback_handler))
 
         # Error handler
         application.add_error_handler(error_handler)

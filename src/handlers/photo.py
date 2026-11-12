@@ -26,6 +26,7 @@ from telegram.ext import ContextTypes
 from src.config.settings import MAX_PHOTO_SIZE_MB, RATE_LIMIT_SECONDS
 from src.services.ai_service import AIService, AIServiceError
 from src.services.storage import UserStorage
+from src.utils.helpers import format_size as _format_size
 
 logger = logging.getLogger(__name__)
 
@@ -160,12 +161,3 @@ async def _analyze_photo(update: Update, context: ContextTypes.DEFAULT_TYPE, ima
             await status_msg.edit_text("⚠️ خطای غیرمنتظره‌ای رخ داد. لطفاً دوباره تلاش کنید.")
         except Exception:
             pass
-
-
-def _format_size(size_bytes: int) -> str:
-    if size_bytes < 1024:
-        return f"{size_bytes} B"
-    elif size_bytes < 1024 * 1024:
-        return f"{size_bytes / 1024:.1f} KB"
-    else:
-        return f"{size_bytes / (1024 * 1024):.1f} MB"

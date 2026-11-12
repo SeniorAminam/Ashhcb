@@ -1,0 +1,117 @@
+{
+  "welcome": "Welcome to Mazandaran National Skills University AI Assistant!",
+  "welcome_subtitle": "I'm here to help you with admissions, skills, courses, and academic advising.",
+  "menu": {
+    "search": "🔍 Search",
+    "chat": "💬 Free Chat",
+    "skills": "🎓 Skills & Courses",
+    "admissions": "📝 Admissions",
+    "career": "💼 Career Guidance",
+    "announcements": "📢 Announcements",
+    "image": "🖼️ Generate Image",
+    "settings": "⚙️ Settings"
+  },
+  "settings": {
+    "language": "🌐 Language",
+    "language_changed": "Language changed to {language}."
+  },
+  "common": {
+    "back": "🔙 Back",
+    "cancel": "❌ Cancel",
+    "loading": "⏳ Processing...",
+    "error": "⚠️ An error occurred. Please try again.",
+    "not_found": "Not found.",
+    "try_again": "Please try again."
+  },
+  "chat": {
+    "placeholder": "Ask your question...",
+    "thinking": "🤔 Thinking...",
+    "sources": "📚 Sources:",
+    "no_answer": "I'm unable to answer that question. You can ask another question or use the search menu."
+  },
+  "search": {
+    "prompt": "What would you like to search for?",
+    "results": "Search results for \"{query}\":",
+    "no_results": "No results found.",
+    "local": "📖 Local Knowledge Base",
+    "web": "🌐 Web Search",
+    "categories": "Categories:",
+    "all_categories": "All"
+  },
+  "skills": {
+    "title": "🎓 Skills & Courses",
+    "search_prompt": "Enter skill, course, or workshop name:",
+    "categories": {
+      "digital": "Digital Skills",
+      "technical": "Technical Skills",
+      "soft": "Soft Skills",
+      "language": "Foreign Languages",
+      "business": "Business Skills"
+    },
+    "levels": {
+      "beginner": "Beginner",
+      "intermediate": "Intermediate",
+      "advanced": "Advanced"
+    },
+    "duration": "Duration: {duration}",
+    "certificate": "Certificate: {certificate}",
+    "price": "Price: {price}"
+  },
+  "admissions": {
+    "title": "📝 Admissions & Registration",
+    "requirements": "Admission Requirements:",
+    "documents": "Required Documents:",
+    "deadline": "Registration Deadline: {date}",
+    "contact": "For more info: {contact}"
+  },
+  "career": {
+    "title": "💼 Career Guidance",
+    "guidance": "Based on your interests and skills, suggested career paths:",
+    "market": "Job Market:",
+    "skills_needed": "Required Skills:",
+    "roadmap": "Suggested Roadmap:"
+  },
+  "announcements": {
+    "title": "📢 Recent Announcements",
+    "from_eitaa": "From Eitaa Channel",
+    "from_website": "From University Website",
+    "read_more": "Read More"
+  },
+  "image": {
+    "title": "🖼️ Image Generation & Editing",
+    "txt2img_prompt": "Describe the image you want:",
+    "img2img_prompt": "Send a photo and describe the changes:",
+    "generating": "🎨 Generating image...",
+    "transforming": "🔄 Transforming image...",
+    "analyzing": "🔍 Analyzing image...",
+    "done": "✅ Image ready!",
+    "rate_limited": "⏳ Please wait {seconds} seconds."
+  },
+  "admin": {
+    "panel": "👑 Admin Panel",
+    "stats": "📊 Statistics",
+    "users": "👥 User List",
+    "broadcast": "📢 Broadcast Message",
+    "knowledge": "📥 Knowledge Management",
+    "scrapers": "🕷️ Scrapers",
+    "add_knowledge": "➕ Add Knowledge",
+    "trigger_scrape": "▶️ Run Scraper",
+    "knowledge_added": "Knowledge added successfully.",
+    "scrape_triggered": "Scraper triggered."
+  },
+  "user_panel": {
+    "title": "👤 User Panel",
+    "history": "📜 History",
+    "stats": "📊 My Stats",
+    "language": "🌐 Change Language",
+    "total_queries": "Total Queries: {count}",
+    "today_queries": "Today: {count}",
+    "joined": "Joined: {date}"
+  },
+  "errors": {
+    "api_unavailable": "AI service is unavailable.",
+    "rate_limit": "Rate limit exceeded. Please wait.",
+    "invalid_input": "Invalid input.",
+    "permission_denied": "Permission denied."
+  }
+}

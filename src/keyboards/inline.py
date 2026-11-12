@@ -16,14 +16,7 @@
 
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup
 
-AGNES_MODELS = [
-    {
-        "id": "agnes-image-2.0-flash",
-        "label": "Agnes Image 2.0 Flash",
-        "quality": "⭐ عالی",
-        "cost": "رایگان",
-    },
-]
+from src.services.agnes_service import AGNES_MODELS
 
 
 def get_start_keyboard() -> InlineKeyboardMarkup:

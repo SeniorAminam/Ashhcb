@@ -19,7 +19,6 @@ import logging
 from telegram import Update
 from telegram.ext import ContextTypes
 
-from src.config.settings import BOT_USERNAME
 from src.services.storage import UserStorage
 from src.keyboards.reply import get_user_panel_keyboard, get_main_keyboard
 from src.handlers.admin import is_admin
